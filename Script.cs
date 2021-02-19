@@ -33,22 +33,22 @@ public class Script : MonoBehaviour
         obj.transform.position += new Vector3(vx*Time.deltaTime, vy*Time.deltaTime, 0f);
         
         float coloracion = 1f;
-        if(Input.GetKey(KeyCode.R)&&r<255f){
+        if(Input.GetKey(KeyCode.R)&&r<255f&&!(Input.GetKey(KeyCode.LeftShift))&&!(Input.GetKey(KeyCode.RightShift))){
             r+=coloracion;
         }
-        if(Input.GetKey(KeyCode.T)&&r>0f){
+        if(Input.GetKey(KeyCode.R)&&r>0f&&(Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.RightShift))){
             r-=coloracion;
         }
-        if(Input.GetKey(KeyCode.G)&&g<255f){
+        if(Input.GetKey(KeyCode.G)&&g<255f&&!(Input.GetKey(KeyCode.LeftShift))&&!(Input.GetKey(KeyCode.RightShift))){
             g+=coloracion;
         }
-        if(Input.GetKey(KeyCode.H)&&g>0f){
+        if(Input.GetKey(KeyCode.G)&&g>0f&&(Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.RightShift))){
             g-=coloracion;
         }
-        if(Input.GetKey(KeyCode.B)&&b<255f){
+        if(Input.GetKey(KeyCode.B)&&b<255f&&!(Input.GetKey(KeyCode.LeftShift))&&!(Input.GetKey(KeyCode.RightShift))){
             b+=coloracion;
         }
-        if(Input.GetKey(KeyCode.N)&&b>0f){
+        if(Input.GetKey(KeyCode.B)&&b>0f&&(Input.GetKey(KeyCode.LeftShift)||Input.GetKey(KeyCode.RightShift))){
             b-=coloracion;
         }
         Color c = CrearColor(new Vector3(r,g,b));
